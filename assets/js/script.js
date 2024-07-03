@@ -17,20 +17,18 @@
         });
 
         // Prevent text selection and copying
-        document.addEventListener('selectstart', function(event) {
-            event.preventDefault();
-        });
+       
         
-        document.addEventListener('copy', function(event) {
-            event.preventDefault();
-        });
+document.addEventListener('copy', function(event) {
+event.preventDefault();
+});
 
-        // Additional measure to disable right-click on all elements
-        document.querySelectorAll('*').forEach(element => {
-            element.addEventListener('contextmenu', function(event) {
-                event.preventDefault();
-            });
-        });
+// Additional measure to disable right-click on all elements
+  document.querySelectorAll('*').forEach(element => {
+  element.addEventListener('contextmenu', function(event) {
+   event.preventDefault();
+  });
+});
 
 
 // element toggle function

@@ -1,5 +1,38 @@
 'use strict';
 
+// Disable right-click
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+
+        // Disable specific key combinations
+        document.addEventListener('keydown', function(event) {
+            if ((event.ctrlKey && (event.key === 's' || event.key === 'u' || event.key === 'p' || event.key === 'c' || event.key === 'a')) ||
+                (event.metaKey && (event.key === 's' || event.key === 'u' || event.key === 'p' || event.key === 'c' || event.key === 'a'))) {
+                event.preventDefault();
+            }
+            if (event.key === 'PrintScreen') {
+                event.preventDefault();
+            }
+        });
+
+        // Prevent text selection and copying
+        document.addEventListener('selectstart', function(event) {
+            event.preventDefault();
+        });
+        
+        document.addEventListener('copy', function(event) {
+            event.preventDefault();
+        });
+
+        // Additional measure to disable right-click on all elements
+        document.querySelectorAll('*').forEach(element => {
+            element.addEventListener('contextmenu', function(event) {
+                event.preventDefault();
+            });
+        });
+
+
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 

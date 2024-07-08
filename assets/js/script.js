@@ -196,7 +196,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 const targets = [
   { date: "07 Aug 2024", elementId: "days1", statusId: "status1" },
   { date: "25 Jul 2024", elementId: "days2", statusId: "status2" },
-  { date: "01 Jan 2025", elementId: "days3", statusId: "status3" }
+  { date: "07 Aug 2024", elementId: "days3", statusId: "status3" }
 ];
 
 function countdown() {

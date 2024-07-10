@@ -982,14 +982,13 @@ strong{
   font-size: 0.6em;
   width: 180px;
 }
-
 .card2 {
   position: absolute;
   display: flex;
   flex-direction: row;
   width: 20rem;
   height: 8.125rem;
-  border-radius: 2.1875rem;
+  border-radius: 1.5625rem;
   background: white;
   z-index: -1;
   transition: .4s ease-in-out;
@@ -1652,7 +1651,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .clients-item { min-width: calc(33.33% - 10px); }
 
+  .cardcontainer {
+    padding: 5%;
+  }
 
+  .card, .card2 , .card3{
+    width: 18rem;
+  }
 
   /**
    * #PORTFOLIO, BLOG 
@@ -1673,6 +1678,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 @media (min-width: 580px) {
 
+  
   /**
    * CUSTOM PROPERTY
    */

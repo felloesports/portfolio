@@ -1658,7 +1658,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   .card, .card2 , .card3{
     width: 18rem;
   }
-
+  .main-text{
+    top: -6rem;
+    font-size: 1.2em;
+    left: 8rem;
+  }
   /**
    * #PORTFOLIO, BLOG 
    */

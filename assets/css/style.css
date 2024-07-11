@@ -489,10 +489,10 @@ transform: scale(1.2);
   padding: 30px 20px;
   transition: color var(--transition-1);
   transition:all .10s ease-in-out;
-  height: max-content;
+  height: min-content;
   margin: -15px;
+  z-index: 4;
 }
-
 .navbar-link:hover,.navbar-link:focus { 
   color: var(--light-gray-70);
   font-size: medium; 
@@ -709,13 +709,18 @@ strong{
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 6em ; 
-  width: 6em;
+  min-width: 6em;
   scroll-snap-align: center;
   
   }
+.skills img{
+  filter: invert(80) sepia(90) ;
+  height: 3em;
+}
 
 .skills span {
     display: none;
@@ -732,15 +737,15 @@ strong{
   color: #ffffff;
 }
 .green:hover , .green:active {
-  animation: growShadowGreen 1s forwards;
+  animation: growShadowGreen .5s forwards;
 }
 
 .yellow:hover,.yellow:active {
-  animation: growShadowYellow 1s forwards;
+  animation: growShadowYellow .5s forwards;
 }
 
-.red:hover .red:active{
-  animation: growShadowRed 1s forwards;
+.red:hover ,.red:active{
+  animation: growShadowRed .5s forwards;
 }
 
 @keyframes growShadowGreen {
@@ -934,7 +939,7 @@ strong{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
-  height: 40vh; /* Set a fixed height for the container */
+  height: 50vh; /* Set a fixed height for the container */
   overflow-y: auto; /* Add vertical scrollbar if content exceeds height */
   z-index: 2;
   width: 100%;
@@ -1136,7 +1141,9 @@ strong{
   }
 }
 
-.clients { margin-bottom: 15px; }
+.clients { margin-bottom: 15px;}
+
+
 
 .clients-list {
   display: flex;
@@ -1669,10 +1676,12 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .project-img,
   .blog-banner-box { height: auto; }
-
+  
 }
 
-
+@media (min-width: 350px) {
+  .navbar-list { gap: 20px; }
+}
 
 
 

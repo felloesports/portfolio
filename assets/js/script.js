@@ -1,18 +1,70 @@
 'use strict';
-//block save and right click
 
+document.addEventListener('DOMContentLoaded', function () {
+  const skills = document.querySelectorAll('.skills');
+
+  skills.forEach(skill => {
+    skill.addEventListener('touchstart', function () {
+      skill.classList.add('touch-active');
+    });
+
+    skill.addEventListener('touchend', function () {
+      skill.classList.remove('touch-active');
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    card.addEventListener('touchstart', function () {
+      card.classList.add('touch-active');
+    });
+
+    card.addEventListener('touchend', function () {
+      card.classList.remove('touch-active');
+    });
+  });
+});
+
+// Block right-click context menu
 document.addEventListener('contextmenu', function(event) {
   event.preventDefault();
 });
 
 // Disable specific key combinations
 document.addEventListener('keydown', function(event) {
-  if ((event.ctrlKey && (event.key === 's' || event.key === 'u' || event.key === 'p' || event.key === 'c' || event.key === 'a')) ||
-      (event.metaKey && (event.key === 's' || event.key === 'u' || event.key === 'p' || event.key === 'c' || event.key === 'a'))) {
+  const blockedCombos = [
+    { ctrlKey: true, key: 's' },  // Ctrl+S
+    { ctrlKey: true, key: 'u' },  // Ctrl+U
+    { ctrlKey: true, key: 'p' },  // Ctrl+P
+    { ctrlKey: true, key: 'c' },  // Ctrl+C
+    { ctrlKey: true, key: 'a' },  // Ctrl+A
+    { ctrlKey: true, key: 'i' },  // Ctrl+I
+    { ctrlKey: true, key: 'j' },  // Ctrl+J
+    { ctrlKey: true, key: 'k' },  // Ctrl+K
+    { ctrlKey: true, key: 'h' },  // Ctrl+H
+    { metaKey: true, key: 's' },  // Cmd+S
+    { metaKey: true, key: 'u' },  // Cmd+U
+    { metaKey: true, key: 'p' },  // Cmd+P
+    { metaKey: true, key: 'c' },  // Cmd+C
+    { metaKey: true, key: 'a' },  // Cmd+A
+    { metaKey: true, key: 'i' },  // Cmd+I
+    { metaKey: true, key: 'j' },  // Cmd+J
+    { metaKey: true, key: 'k' },  // Cmd+K
+    { metaKey: true, key: 'h' },  // Cmd+H
+    { metaKey: true, altKey: true, key: 'i' }, // Cmd+Opt+I
+    { metaKey: true, altKey: true, key: 'j' }, // Cmd+Opt+J
+    { shiftKey: true, key: 'PrintScreen' } // Shift+PrintScreen
+  ];
+
+  for (let combo of blockedCombos) {
+    let match = Object.keys(combo).every(k => event[k] === combo[k]);
+    if (match) {
       event.preventDefault();
-  }
-  if (event.key === 'PrintScreen') {
-      event.preventDefault();
+      return;
+    }
   }
 });
 
@@ -24,9 +76,10 @@ document.addEventListener('copy', function(event) {
 // Additional measure to disable right-click on all elements
 document.querySelectorAll('*').forEach(element => {
   element.addEventListener('contextmenu', function(event) {
-      event.preventDefault();
+    event.preventDefault();
   });
 });
+
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }

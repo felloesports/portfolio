@@ -290,15 +290,15 @@ function logo(){
   const linkUrl = document.getElementById('linkUrl')
   const linkCard = document.querySelector('.social-list')
   const loader = document.querySelector('.loader')
-  
+
   
   function applyData(data){
       console.log(data.socialLinks)
       data.socialLinks.map(link=>{
           linkCard.innerHTML = linkCard.innerHTML + 
           `<li class="social-item">
-          <a href="${link.linkUrl}" class="social-link">
-            <ion-icon name="logo-${link.linkName}"></ion-icon>
+          <a href="${link.linkUrl}" target="_blank" class="social-link">
+            <ion-icon name="logo-${link.linkName.toLowerCase()}"></ion-icon>
           </a>
         </li>`
       })    

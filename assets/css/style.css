@@ -435,14 +435,20 @@ transform: scale(1.2);
 
 .contact-info address { font-style: normal; }
 
-.social-list {
-  display: flex;
+.social-list{
+  display: none;
   justify-content: flex-start;
   align-items: center;
+  text-align: center;
   gap: 15px;
   padding-bottom: 4px;
   padding-left: 7px;
 }
+.loader{
+  text-align: center;
+  color: #ffffff;
+}
+
 
 .social-item .social-link {
   color: var(--light-gray-70);

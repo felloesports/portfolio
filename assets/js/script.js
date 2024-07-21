@@ -285,6 +285,38 @@ function formatTime(time) {
   return time < 10 ? `0${time}` : time;
 }
 
+function logo(){
+  const linkName = document.querySelector('.link-name')
+  const linkUrl = document.getElementById('linkUrl')
+  const linkCard = document.querySelector('.social-list')
+  
+  
+  function applyData(data){
+      console.log(data.socialLinks)
+      data.socialLinks.map(link=>{
+          linkCard.innerHTML = linkCard.innerHTML + 
+          `<li class="social-item">
+          <a href="${link.linkUrl}" class="social-link">
+            <ion-icon name="logo-${link.linkName}"></ion-icon>
+          </a>
+        </li>`
+      })    
+  }
+
+  function fetchData (){
+      fetch('https://api.npoint.io/2a7f0442599f0a78a72a')
+              .then(data=>data.json())
+              .then(data=>{
+                  console.log("data fetched")
+                  applyData(data)
+              })
+  }
+  
+  fetchData()}
+
+
+logo()
+
 // Initial call to set the countdown immediately on page load
 countdown();
 

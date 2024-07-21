@@ -289,6 +289,7 @@ function logo(){
   const linkName = document.querySelector('.link-name')
   const linkUrl = document.getElementById('linkUrl')
   const linkCard = document.querySelector('.social-list')
+  const loader = document.querySelector('.loader')
   
   
   function applyData(data){
@@ -304,13 +305,15 @@ function logo(){
   }
 
   function fetchData (){
-      fetch('https://api.npoint.io/2a7f0442599f0a78a72a')
-              .then(data=>data.json())
-              .then(data=>{
-                  console.log("data fetched")
-                  applyData(data)
-              })
-  }
+    loader.style.display = 'block'
+    fetch('https://api.npoint.io/2a7f0442599f0a78a72a')
+            .then(data=>data.json())
+            .then(data=>{
+                loader.style.display = 'none'
+                linkCard.style.display = 'flex'
+                applyData(data)
+            })
+}
   
   fetchData()}
 

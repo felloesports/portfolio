@@ -18,7 +18,7 @@
   <!--
     - custom css link
   -->
-  <script src="./assets/css/style.js"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
   
  
   <!--
@@ -170,7 +170,7 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link >Portfolio</button>
           </li>
 
           <li class="navbar-item">
@@ -234,11 +234,11 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./assets/images/icon-dev.svg" alt="Information icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
+                <h4 class="h4 service-item-title">Information</h4>
 
                 <p class="service-item-text">
                   High-quality development of sites at the professional level.
@@ -703,22 +703,32 @@
           <ul class="filter-list">
 
             <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
+              <button class="active" data-filter-btn onclick="showsearchbar()">All</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web design</button>
+              <button data-filter-btn onclick="showsearchbar()">Web Applications</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Applications</button>
+              <button data-filter-btn onclick="showsearchbar()">Tools</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web development</button>
+              <button data-filter-btn onclick="showsearchbar()">Information</button>
             </li>
-
+            <li class="filter-item">
+              <button data-filter-btn onclick="showsearchbar()">Games</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn id="otherButton" onclick="hidesearchbar()">Other</button>
+            </li>
           </ul>
+
+          <div class="input-container">
+            <input placeholder="Search something..." id="searchInputp" class="input" name="text" type="search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <rect fill="white"></rect> <path d="M7.25007 2.38782C8.54878 2.0992 10.1243 2 12 2C13.8757 2 15.4512 2.0992 16.7499 2.38782C18.06 2.67897 19.1488 3.176 19.9864 4.01358C20.824 4.85116 21.321 5.94002 21.6122 7.25007C21.9008 8.54878 22 10.1243 22 12C22 13.8757 21.9008 15.4512 21.6122 16.7499C21.321 18.06 20.824 19.1488 19.9864 19.9864C19.1488 20.824 18.06 21.321 16.7499 21.6122C15.4512 21.9008 13.8757 22 12 22C10.1243 22 8.54878 21.9008 7.25007 21.6122C5.94002 21.321 4.85116 20.824 4.01358 19.9864C3.176 19.1488 2.67897 18.06 2.38782 16.7499C2.0992 15.4512 2 13.8757 2 12C2 10.1243 2.0992 8.54878 2.38782 7.25007C2.67897 5.94002 3.176 4.85116 4.01358 4.01358C4.85116 3.176 5.94002 2.67897 7.25007 2.38782ZM9 11.5C9 10.1193 10.1193 9 11.5 9C12.8807 9 14 10.1193 14 11.5C14 12.8807 12.8807 14 11.5 14C10.1193 14 9 12.8807 9 11.5ZM11.5 7C9.01472 7 7 9.01472 7 11.5C7 13.9853 9.01472 16 11.5 16C12.3805 16 13.202 15.7471 13.8957 15.31L15.2929 16.7071C15.6834 17.0976 16.3166 17.0976 16.7071 16.7071C17.0976 16.3166 17.0976 15.6834 16.7071 15.2929L15.31 13.8957C15.7471 13.202 16 12.3805 16 11.5C16 9.01472 13.9853 7 11.5 7Z" clip-rule="evenodd" fill-rule="evenodd"></path> </g></svg>
+          </div>
 
           <div class="filter-select-box">
 
@@ -735,29 +745,63 @@
             <ul class="select-list">
 
               <li class="select-item">
-                <button data-select-item>All</button>
+                <button data-select-item onclick="showsearchbar()">All</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web design</button>
+                <button data-select-item onclick="showsearchbar()">Web Applications</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Applications</button>
+                <button data-select-item onclick="showsearchbar()">Tools</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web development</button>
+                <button data-select-item onclick="showsearchbar()">Information</button>
               </li>
-
+              <li class="select-item">
+                <button data-select-item onclick="showsearchbar()">Games</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item onclick="hidesearchbar()">Other</button>
+              </li>
             </ul>
 
           </div>
+          <div class="container" style="display: none;">
+            <div class="controls">
+                <button id="backBtn" class="hidden">➜</button>
+                <input type="search" id="searchInput" placeholder="Search files...">
+                <select id="sortSelect">
+                    <option value="name">Sort by Name</option>
+                    <option value="type">Sort by Type</option>
+                </select>
+                <div class="view-toggle">
+                    <button id="listViewBtn" class="active"><i class="fas fa-list"></i></button>
+                    <button id="gridViewBtn"><i class="fas fa-th"></i></button>
+                </div>
+            </div>
+            <div id="advancedPath"></div>
+            <div id="fileSystem" class="list-view"></div>
+        </div>
 
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+          <div id="loader">
+            <div class="loader-project">
+              <div class="square" ></div>
+              <div class="square"></div>
+              <div class="square last"></div>
+              <div class="square clear"></div>
+              <div class="square"></div>
+              <div class="square last"></div>
+              <div class="square clear"></div>
+              <div class="square "></div>
+              <div class="square last"></div>
+            </div>
+          </div>
+          <ul class="project-list" style="display: none;">
+            
+            <li class="project-item  active" data-filter-item data-category="web applications">
+              <a href="https://appsweb.netlify.app/webapps/budgetwebapp" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -767,48 +811,343 @@
                   <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Finance</h3>
+                <h3 class="project-title">Budget App</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category">Web Applications</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="web applications">
+              <a href="https://appsweb.netlify.app/webapps/calculator" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                  <img src="./assets/images/project-10.png" alt="finance" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Orizon</h3>
+                <h3 class="project-title">Calculator</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category">Web Applications</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="web applications">
+              <a href="https://appsweb.netlify.app/webapps/weatherapp" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                  <img src="./assets/images/project-11.png" alt="finance" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Fundo</h3>
+                <h3 class="project-title">Weather App</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">Web Applications</p>
 
               </a>
             </li>
+
+            <li class="project-item  active" data-filter-item data-category="games">
+              <a href="https://gamesby.netlify.app/games%20/cointossweb" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-12.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Coin Toss</h3>
+
+                <p class="project-category">Games</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="games">
+              <a href="https://gamesby.netlify.app/games%20/dicegame/" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-13.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Dice Game</h3>
+
+                <p class="project-category">Games</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="games">
+              <a href="https://gamesby.netlify.app/games%20/numberguessinggame/" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-14.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Number guessing game</h3>
+
+                <p class="project-category">Games</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="games">
+              <a href="https://gamesby.netlify.app/games%20/quizgame" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-15.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Quiz</h3>
+
+                <p class="project-category">Games</p>
+
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item data-category="games">
+              <a href="https://gamesby.netlify.app/games%20/rockpaperscissorsgame" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-16.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Rock Paper Scissor</h3>
+
+                <p class="project-category">Games</p>
+
+              </a>
+            </li> <li class="project-item  active" data-filter-item data-category="games">
+              <a href="https://gamesby.netlify.app/games%20/snakegame/" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-17.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Snake game</h3>
+
+                <p class="project-category">Games</p>
+
+              </a>
+            </li>
+
+          </li> <li class="project-item  active" data-filter-item data-category="games">
+            <a href="https://gamesby.netlify.app/games%20/tictactoe/" target="_blank">
+
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+
+                <img src="./assets/images/project-18.png" alt="orizon" loading="lazy">
+              </figure>
+
+              <h3 class="project-title">Tic tac toe</h3>
+
+              <p class="project-category">Games</p>
+
+            </a>
+          </li>
+
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/agecalculator/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/age-calculator.jpg" alt="Age Calculator" loading="lazy">
+              </figure>
+              <h3 class="project-title">Age Calculator</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/currencyconvertor/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/currency-converter.png" alt="Currency Convertor" loading="lazy">
+              </figure>
+              <h3 class="project-title">Currency Convertor</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/digitalclock/" target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/digital-clock.jpg" alt="Digital Clock" loading="lazy">
+              </figure>
+              <h3 class="project-title">Digital Clock</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/githubprofilefinder/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/github-profile-finder.jpg" alt="Github Profile Finder" loading="lazy">
+              </figure>
+              <h3 class="project-title">Github Profile Finder</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/imageresizer/" target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/image-resizer.jpg" alt="Image Resizer" loading="lazy">
+              </figure>
+              <h3 class="project-title">Image Resizer</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/imagesearchwebsite/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/image-search-website.jpg" alt="Image Search Website" loading="lazy">
+              </figure>
+              <h3 class="project-title">Image Search Website</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/memegenerator/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/meme-generator.png" alt="Meme Generator" loading="lazy">
+              </figure>
+              <h3 class="project-title">Meme Generator</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/passwordgenerator/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/password-generator.jpg" alt="Password Generator" loading="lazy">
+              </figure>
+              <h3 class="project-title">Password Generator</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/qrgenerator/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/qr-generator.jpg" alt="QR Generator" loading="lazy">
+              </figure>
+              <h3 class="project-title">QR Generator</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/quotes/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/quotes.png" alt="Quotes" loading="lazy">
+              </figure>
+              <h3 class="project-title">Quotes</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/screenflashlight/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/screen-flash-light.jpg" alt="Screen Flash Light" loading="lazy">
+              </figure>
+              <h3 class="project-title">Screen Flash Light</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/stickynotes/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/sticky-notes.jpg" alt="Sticky Notes" loading="lazy">
+              </figure>
+              <h3 class="project-title">Sticky Notes</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/stopwatch/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/stopwatch.jpg" alt="Stopwatch" loading="lazy">
+              </figure>
+              <h3 class="project-title">Stopwatch</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+          <li class="project-item tools active" data-filter-item data-category="tools">
+            <a href="https://toolsonweb.netlify.app/tools/todoapp/"  target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/todo-app.png" alt="Todo App" loading="lazy">
+              </figure>
+              <h3 class="project-title">Todo App</h3>
+              <p class="project-category">Tools</p>
+            </a>
+          </li>
+       
+                                                                                                                                                      
 
             <li class="project-item  active" data-filter-item data-category="applications">
               <a href="#">
@@ -864,23 +1203,55 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
+            <li class="project-item information active" data-filter-item data-category="information">
+              <a href="https://information-handel.netlify.app/information/birthdaywishingwebsite/">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
+                  <img src="./assets/images/birthday-wishing-website.jpg" alt="Birthday Wishing Website" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
+                <h3 class="project-title">Birthday Wishing Website</h3>
+                <p class="project-category">Information</p>
               </a>
             </li>
+            <li class="project-item information active" data-filter-item data-category="information">
+              <a href="https://information-handel.netlify.app/information/jokes/">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/jokes.jpg" alt="Jokes" loading="lazy">
+                </figure>
+                <h3 class="project-title">Jokes</h3>
+                <p class="project-category">Information</p>
+              </a>
+            </li>
+            <li class="project-item information active" data-filter-item data-category="information">
+              <a href="https://information-handel.netlify.app/information/moviepedia/">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/moviepedia.png" alt="MoviePedia" loading="lazy">
+                </figure>
+                <h3 class="project-title">MoviePedia</h3>
+                <p class="project-category">Information</p>
+              </a>
+            </li>
+            <li class="project-item information active" data-filter-item data-category="information">
+              <a href="https://information-handel.netlify.app/information/proflinks/">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/proflinks.jpg" alt="ProfLinks" loading="lazy">
+                </figure>
+                <h3 class="project-title">ProfLinks</h3>
+                <p class="project-category">Information</p>
+              </a>
+            </li>
+                                                
 
             <li class="project-item  active" data-filter-item data-category="applications">
               <a href="#">
@@ -900,7 +1271,7 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
+            <li class="project-item  active" data-filter-item data-category="information">
               <a href="#">
 
                 <figure class="project-img">
@@ -913,13 +1284,18 @@
 
                 <h3 class="project-title">Arrival</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category">Information</p>
 
               </a>
             </li>
-
+            
+            <li id="noResults" class="project-item" style="display: none;">
+              <p style="color: aliceblue; text-align: center;">No projects found matching</p>
+            </li>
+            
           </ul>
-
+          
+          
         </section>
 
       </article>
@@ -1176,6 +1552,7 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+  
 
   <!--
     - ionicon link

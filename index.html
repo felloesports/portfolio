@@ -18,7 +18,7 @@
   <!--
     - custom css link
   -->
-  <script src="./assets/css/style.js"></script> 
+  <link rel="stylesheet" href="./assets/css/style.css">
   
  
   <!--
@@ -290,10 +290,17 @@
 
        <section class="">
 
-        <h3 class="h3 testimonials-title">Skills</h3>
+        <h3 class="h3 testimonials-title" style="text-align: center;"><strong style="text-shadow: 0 0 3px white; display: inline-flex; gap: 5px;">
+        <span>S</span>
+        <span>K</span>
+        <span>I</span>
+        <span>L</span>
+        <span>L</span>
+        <span>S</span>
+        </strong></h3>
         <h1 class="cs">Programming Skills</h1>
         <ul class="testimonials-list has-scrollbar">
-          <li data-text="Green Box" class="skills green"><i class="fa-4x fa-brands fa-python" aria-hidden="true"><span>Python</span></i></li>
+          <li class="skills green"><i class="fa-4x fa-brands fa-python" aria-hidden="true"><span style="font-size: .6rem;">Python</span></i></li>
           <li class="skills green"><i class="fa-4x devicon-cplusplus-plain"><span>C++</span></i></li>
           <li class="skills green"><i class="fa-4x devicon-css3-plain" aria-hidden="true"><span>Css3</span></i></li>
           <li class="skills green"><i class="fa-4x devicon-html5-plain" aria-hidden="true"><span>Html</span></i></li>
@@ -418,7 +425,7 @@
                       <svg class="aqisvg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" xml:space="preserve">  <image id="image0" width="20" height="20" x="0" y="0" 
                         href="https://cdn-icons-png.flaticon.com/256/5956/5956592.png"></image>
                       </svg>
-                      <div class="aqitext">Peojects<br>2</div>
+                      <div class="realfeeltext">Peojects<br>2</div>
                     </div>
               
                     <div class="realfeel">
@@ -470,7 +477,7 @@
                       <svg class="aqisvg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" xml:space="preserve">  <image id="image0" width="20" height="20" x="0" y="0" 
                         href="https://cdn-icons-png.flaticon.com/256/5956/5956592.png"></image>
                       </svg>
-                      <div class="aqitext">Peojects<br>1</div>
+                      <div class="realfeeltext">Peojects<br>1</div>
                     </div>
               
                     <div class="realfeel">
@@ -773,8 +780,8 @@
                 <button id="backBtn" class="hidden">➜</button>
                 <input type="search" id="searchInput" placeholder="Search files...">
                 <select id="sortSelect">
-                    <option value="name">Sort by Name</option>
-                    <option value="type">Sort by Type</option>
+                    <option value="name">Name</option>
+                    <option value="type">Type</option>
                 </select>
                 <div class="view-toggle">
                     <button id="listViewBtn" class="active"><i class="fas fa-list"></i></button>

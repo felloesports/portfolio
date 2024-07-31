@@ -515,7 +515,7 @@ transform: scale(1.2);
 }
 .navbar-link{
   color: var(--light-gray);
-  font-size: var(--fs-5);
+  font-size: var(--fs-7);
   padding: 30px 20px;
   transition: color var(--transition-1);
   transition:all .10s ease-in-out;
@@ -2466,7 +2466,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   /**
    * CUSTOM PROPERTY
    */
-   
+
   :root {
 
     /**
@@ -2576,7 +2576,7 @@ textarea.form-input::-webkit-resizer { display: none; }
  * responsive larger than 1250px screen
  */
 
-@media (min-width: 1231px) {
+@media (min-width: 1280px) {
 
   /**
    * RESET

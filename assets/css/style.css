@@ -929,7 +929,6 @@ strong{
   align-items: center;
   justify-content: center;
   margin-bottom: 120px;
-  
 }
 
 
@@ -953,6 +952,7 @@ strong{
   position: relative;
   top: -3em;
   left: 4.3em;
+  max-width: 150px;
 }
 
 .mainsub {
@@ -960,6 +960,7 @@ strong{
   top: -10.2em;
   left: 13em;
   font-size: 0.6em;
+  max-width: 150px;
 }
 .card2 {
   position: absolute;
@@ -1077,9 +1078,12 @@ strong{
 @media (max-width: 768px) {
   
   .cardcontainer {
-    padding: 20% 5% 5% 5%;
+    padding: 20% 0% 5% 0%;
   }
 
+  .cardm:nth-child(1){
+    margin-top: 50px;
+    }
   .card, .card2 {
     width: 18rem;
   }
@@ -2035,7 +2039,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .clients-item { min-width: calc(33.33% - 10px); }
 
   .cardcontainer {
-    padding: 20% 5% 5% 5%;
+    padding: 20% 0% 5% 0%;
   }
 
   .card, .card2 , .card3{

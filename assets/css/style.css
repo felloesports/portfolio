@@ -515,7 +515,7 @@ transform: scale(1.2);
 }
 .navbar-link{
   color: var(--light-gray);
-  font-size: var(--fs-4);
+  font-size: var(--fs-5);
   padding: 30px 20px;
   transition: color var(--transition-1);
   transition:all .10s ease-in-out;
@@ -935,7 +935,7 @@ strong{
 
 .card {
   width: 20rem;
-  height: 8.25rem;
+  height: 7rem;
   border-radius: 1.5625rem;
   background:var(--orange-yellow-crayola);
   color: black;

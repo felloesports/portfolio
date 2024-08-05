@@ -1593,7 +1593,7 @@ input[type="search"]::-webkit-search-cancel-button {
       -webkit-backdrop-filter: blur(30px);
       backdrop-filter: blur(30px);
       padding: 10px;
-      min-height:70vh;
+      min-height:50vh;
       height:100%;
       width: 100%;
       z-index:0;

@@ -8,7 +8,7 @@
   <meta name="author" content="Sachin">
   <meta property="og:title" content="Sachin Sharma portfolio">
   <meta property="og:type" content="Website">
-  <title>Sachin PortFolio</title>
+  <title>Sachin Portfolio</title>
 
   <!--
     - favicon
@@ -20,15 +20,13 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/main.css">
-
   
-  
+ 
   <!--
     - icon link
   --> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />      
   <!--
     - google font link
   -->
@@ -37,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body >
 
   <!--
     - #MAIN
@@ -48,7 +46,7 @@
     <!--
       - #SIDEBAR
     -->
-    <a href="#top" class="back-to-top active" style="display: none;" data-back-to-top="">BACK TO TOP</a>
+    <a class="back-to-top active" style="display: none;" id="goToTopBtn">BACK TO TOP</a>
     <aside class="sidebar" data-sidebar>
 
       <div class="sidebar-info">
@@ -293,7 +291,7 @@
 
        <section class="">
 
-        <h3 class="h3 testimonials-title" style="text-align: center;"><strong style="text-shadow: 0 0 3px white; display: inline-flex; gap: 5px; font-size: x-large;">
+        <h3 class="h3 testimonials-title" style="text-align: center;"><strong style="text-shadow: 0 0 3px white; display: inline-flex; gap: 5px;">
         <span>S</span>
         <span>K</span>
         <span>I</span>
@@ -372,9 +370,9 @@
                     <div class="air">
                     <div class="aqitext">End<br>07 Aug 24</div>
                     </div>
-                    <div class="humidity" id="days-text">
+                    <div class="countdown-el days-c" id="days-text">
                           <span>Days Left</span>
-                          <p class="big-text aqitext" id="days1">0</p>
+                          <p class="big-text" id="days1">0</p>
                       </div>
                   </div>
               
@@ -588,6 +586,10 @@
             <h3 class="h3">Education</h3>
           </div>
 
+
+      
+ 
+
           <ol class="timeline-list">
 
             <li class="timeline-item">
@@ -630,67 +632,46 @@
 
         </section>
 
-
         <section class="skill">
-
           <h3 class="h3 skills-title">My skills</h3>
-
           <ul class="skills-list content-card">
-
             <li class="skills-item">
-
               <div class="title-wrapper">
                 <h5 class="h5">Web design</h5>
                 <data value="80">80%</data>
               </div>
-
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
+                <div class="skill-progress-fill" data-width="80"></div>
               </div>
-
             </li>
-
             <li class="skills-item">
-
               <div class="title-wrapper">
                 <h5 class="h5">IT skills</h5>
                 <data value="70">70%</data>
               </div>
-
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
+                <div class="skill-progress-fill" data-width="70"></div>
               </div>
-
             </li>
-
             <li class="skills-item">
-
               <div class="title-wrapper">
                 <h5 class="h5">Programming</h5>
                 <data value="90">90%</data>
               </div>
-
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
+                <div class="skill-progress-fill" data-width="90"></div>
               </div>
-
             </li>
-
             <li class="skills-item">
-
               <div class="title-wrapper">
                 <h5 class="h5">Communication</h5>
                 <data value="50">50%</data>
               </div>
-
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
+                <div class="skill-progress-fill" data-width="50"></div>
               </div>
-
             </li>
-
           </ul>
-
         </section>
 
       </article>

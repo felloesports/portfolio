@@ -158,13 +158,14 @@ body { background: var(--smoky-black); }
   font-size: 1rem;
   position: fixed;
   bottom: 160px;
-  right: -30px;
+  right: -90px;
   transform: rotate(0.25turn);
   opacity: 0;
   visibility: hidden;
   transition: var(--transition-1);
   z-index: 4;
   text-shadow: 2px 2px 2px var(--eerie-black-1);
+  cursor:pointer;
 }
 
 .back-to-top.active {
@@ -798,21 +799,7 @@ strong{
  * #testimonials-modal
  */
 
-.modal-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  z-index: 20;
-  pointer-events: none;
-  visibility: hidden;
-}
+
 
 .modal-container::-webkit-scrollbar { display: none; }
 
@@ -1271,6 +1258,68 @@ strong{
 }
 
 
+.skill-progress-bg {
+  width: 100%;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.skill-progress-fill {
+  width: 0;
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 1s ease-out;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 
+    0 2px 5px rgba(76, 175, 80, 0.5),
+    0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+@keyframes glowAnimation {
+  0% {
+    box-shadow: 
+      0 2px 5px rgba(76, 175, 80, 0.5),
+      0 0 10px rgba(76, 175, 80, 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 2px 10px rgba(76, 175, 80, 0.7),
+      0 0 20px rgba(76, 175, 80, 0.7);
+  }
+  100% {
+    box-shadow: 
+      0 2px 5px rgba(76, 175, 80, 0.5),
+      0 0 10px rgba(76, 175, 80, 0.5);
+  }
+}
+
+.skill-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: moveGlow 1s ease-out;
+}
+
+@keyframes moveGlow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skill-progress-fill.animate {
+  animation: glowAnimation 2s ease-in-out infinite;
+}
 
 
 

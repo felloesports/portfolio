@@ -1660,11 +1660,15 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 #backBtn, #sortSelect {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   padding: 5px 10px;
   border: 1px solid var(--orange-yellow-crayola);
   border-radius: 12px;
   color: wheat;
 }
+
 #searchInput {
 height: 40px;
 border-radius:12px;
@@ -1690,7 +1694,7 @@ transform: scale(-1, 1);
 }
 
 #sortSelect{
-background-color: var(--smoky-black);
+background-color: var(--eerie-black-1);
 }
 
 .hidden {

@@ -49,7 +49,7 @@
   /* solid */
 
   --jet: hsl(0, 0%, 22%);
-  --jet-2:hsl(0, 0%, 40%);
+  --jet-2:rgb(150, 149, 149);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
   --eerie-black-2: hsl(240, 2%, 12%);
@@ -203,7 +203,7 @@ background-color: var(--orange-yellow-crayola);
 .sidebar{
   background: var(--eerie-black-2);
   border-radius: 20px;
-  border: 1px solid var(--jet-2);
+  border: 1px solid var(--jet);
   padding: 15px;
   z-index: 1;
 }
@@ -213,8 +213,8 @@ article {
   border-radius: 20px;
   padding: 15px;
   z-index: 1;
- -webkit-filter: drop-shadow(0 0 0.062rem var(--white));
-    filter: drop-shadow(0 0 0.062rem var(--white));
+ -webkit-filter: drop-shadow(0 0 0.062rem var(--jet-2));
+    filter: drop-shadow(0 0 0.062rem var(--jet-2));
 }
 .separator {
   width: 100%;
@@ -577,7 +577,7 @@ main {
   -webkit-box-shadow: var(--shadow-2);
           box-shadow: var(--shadow-2);
   z-index: 5;
-  border: 1px solid var(--jet-2);
+  border: 1px solid var(--jet);
 }
 
 .navbar-list {
@@ -3208,9 +3208,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     padding-bottom: 7px;
   }
 
-  .filter-item button:hover { color: var(--light-gray-70); scale: 1.1;}
-
-  .filter-item button.active { color: var(--orange-yellow-crayola); }
+  .filter-item button:hover { color: var(--light-gray-70); transform: scale(1.1);}
 
   .filter-item button:hover::after{
     content: "";
@@ -3222,6 +3220,9 @@ textarea.form-input::-webkit-resizer { display: none; }
     background: var(--white);
     border-radius: 3px;
   }
+
+  .filter-item button.active { color: var(--orange-yellow-crayola); }
+
   /* portfolio and blog grid */
 
   .project-list, .blog-posts-list { -ms-grid-columns: 1fr 1fr; grid-template-columns: 1fr 1fr; }
@@ -3407,9 +3408,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar, article { width: auto;}
 
-  article { min-height: 100%; 
-    -webkit-filter: drop-shadow(0 0 0.062rem var(--white));
-    filter: drop-shadow(0 0 0.062rem var(--white));}
+  article { min-height: 100%;}
 
   
   #loader{

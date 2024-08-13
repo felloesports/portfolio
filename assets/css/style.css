@@ -49,6 +49,7 @@
   /* solid */
 
   --jet: hsl(0, 0%, 22%);
+  --jet-2:hsl(0, 0%, 40%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
   --eerie-black-2: hsl(240, 2%, 12%);
@@ -201,11 +202,9 @@ background-color: var(--orange-yellow-crayola);
 
 .sidebar{
   background: var(--eerie-black-2);
-  
   border-radius: 20px;
+  border: 1px solid var(--jet-2);
   padding: 15px;
-  -webkit-box-shadow: var(--shadow-1);
-          box-shadow: var(--shadow-1);
   z-index: 1;
 }
 
@@ -214,6 +213,8 @@ article {
   border-radius: 20px;
   padding: 15px;
   z-index: 1;
+ -webkit-filter: drop-shadow(0 0 0.062rem var(--white));
+    filter: drop-shadow(0 0 0.062rem var(--white));
 }
 .separator {
   width: 100%;
@@ -242,6 +243,11 @@ article {
   -webkit-box-shadow: var(--shadow-1);
           box-shadow: var(--shadow-1);
   z-index: 1;
+  -webkit-transition: -webkit-transform .3s ease-in-out,-webkit-box-shadow 0.3s ease-in-out;
+    transition: -webkit-transform .3s ease-in-out,-webkit-box-shadow 0.3s ease-in-out;
+    -o-transition: transform .3s ease-in-out,box-shadow 0.3s ease-in-out;
+    transition: transform .3s ease-in-out,box-shadow 0.3s ease-in-out;
+    transition: transform .3s ease-in-out,box-shadow 0.3s ease-in-out,-webkit-transform .3s ease-in-out,-webkit-box-shadow 0.3s ease-in-out;
 }
 
 .icon-box::before {
@@ -252,7 +258,13 @@ article {
   border-radius: inherit;
   z-index: -1;
 }
-
+.icon-box:hover{
+  -webkit-transform: translateY(-1px);
+        -ms-transform: translateY(-1px);
+            transform: translateY(-1px);
+    -webkit-box-shadow: 0px 10px 10px black;
+            box-shadow: 0px 10px 10px black;
+}
 .icon-box ion-icon { --ionicon-stroke-width: 35px; }
 
 article { display: none; }
@@ -565,7 +577,7 @@ main {
   -webkit-box-shadow: var(--shadow-2);
           box-shadow: var(--shadow-2);
   z-index: 5;
-  
+  border: 1px solid var(--jet-2);
 }
 
 .navbar-list {
@@ -822,12 +834,12 @@ strong{
   height: 6em ; 
   min-width: 6em;
   scroll-snap-align: center;
-  
   }
 .skills img{
   -webkit-filter: invert(80) sepia(90) ;
           filter: invert(80) sepia(90) ;
   height: 3em;
+  
 }
 
 .skills span {
@@ -1503,6 +1515,37 @@ strong{
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+
+summary h4 {
+  display: inline-block;
+  margin: 0;
+  padding-right: 20px; /* Add space to the right for the arrow */
+  position: relative;
+ 
+}
+
+summary h4::after {
+  content: '▶';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg); /* Center the arrow vertically and rotate */
+  transition: transform 0.2s ease-in-out; /* Smooth transition for rotation */
+}
+
+details[open] summary h4::after {
+  transform: translateY(-50%) rotate(90deg); /* Rotate the arrow when details is open */
+}
+
+summary::-webkit-details-marker {
+  display: none; /* Hides the default arrow in WebKit browsers (Chrome, Safari) */
 }
 
 
@@ -3162,12 +3205,23 @@ textarea.form-input::-webkit-resizer { display: none; }
     -webkit-transition: var(--transition-1);
     -o-transition: var(--transition-1);
     transition: var(--transition-1);
+    padding-bottom: 7px;
   }
 
-  .filter-item button:hover { color: var(--light-gray-70); }
+  .filter-item button:hover { color: var(--light-gray-70); scale: 1.1;}
 
   .filter-item button.active { color: var(--orange-yellow-crayola); }
 
+  .filter-item button:hover::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--white);
+    border-radius: 3px;
+  }
   /* portfolio and blog grid */
 
   .project-list, .blog-posts-list { -ms-grid-columns: 1fr 1fr; grid-template-columns: 1fr 1fr; }
@@ -3351,9 +3405,11 @@ textarea.form-input::-webkit-resizer { display: none; }
    * REUSED STYLE
    */
 
-  .sidebar, article { width: auto; }
+  .sidebar, article { width: auto;}
 
-  article { min-height: 100%; }
+  article { min-height: 100%; 
+    -webkit-filter: drop-shadow(0 0 0.062rem var(--white));
+    filter: drop-shadow(0 0 0.062rem var(--white));}
 
   
   #loader{

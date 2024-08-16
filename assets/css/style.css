@@ -2273,8 +2273,7 @@ input[type="search"]::-webkit-search-cancel-button {
       -webkit-backdrop-filter: blur(30px);
       backdrop-filter: blur(30px);
       padding: 10px;
-      min-height:50vh;
-      height:100%;
+      min-height:100%;
       width: 100%;
       z-index:0;
       border-radius: 12px;
@@ -2510,8 +2509,8 @@ background-color: transparent;
   -o-transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
-  height: auto;
-  max-height: 120px;
+  height: 119px;
+  
 }
 
 #fileSystem.grid-view .item:hover {
@@ -2529,6 +2528,7 @@ background-color: transparent;
   word-break: break-word;
   max-width: 100%;
   font-size: smaller;
+  margin-top: 5px;
 }
 
 #fileSystem.list-view .item {
@@ -2566,6 +2566,8 @@ background-color: transparent;
 #fileSystem.list-view .item-name {
   display: inline-block;
 }
+ 
+.file-link .exp-icon{color: var(--vegas-gold);}
 
 #fileSystem.list-view .file-link {
   display: -webkit-box;
@@ -2926,7 +2928,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 @media (min-width: 350px) {
-  .navbar-list { gap: 20px; }
+  .navbar-list { justify-content: space-evenly; }
 }
 
 
@@ -3049,7 +3051,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #NAVBAR
    */
 
-  .navbar { border-radius: 20px; }
+  .navbar { border-radius: 20px 20px 0px; }
 
   .navbar-list { gap: 20px; }
 

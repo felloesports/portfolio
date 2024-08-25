@@ -40,14 +40,19 @@
   <!--
     - #MAIN
   -->
-  <button class="bot_call"  onclick="showbot()" id="botToggle">
-    <div class="sign">
-    <i class="fa-solid fa-robot" style="transform: translateY(-2px);"></i>
-    <i class="fas fa-times" style="display: none;"></i>
-    </div>
-    <div class="text">Chatbot</div>
-  </button>
-
+  <div style="position: sticky; top: 0; margin-top: -80px; z-index: 1001;" >
+  <div class="botcontainer">
+    <button class="bot_call"  onclick="showbot()" id="botToggle">
+      <div class="sign">
+      <i class="fa-solid fa-robot" style="transform: translateY(-2px);"></i>
+      <i class="fas fa-times" style="display: none;"></i>
+      </div>
+      <div class="text">Chatbot</div>
+    </button>
+    <div id="curved-corner-topleft"></div>
+  </div>
+  <div id="curved-corner-topleft"></div>
+</div>
   <main>
 
     <!--
@@ -60,8 +65,10 @@
       <div class="sidebar-info">
        
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Sachin Sharma " width="80">
-        </figure>
+        <div class="avatar-container">
+            <img id="avatar" src="./pikaso_edit-2.png" alt="Sachin Sharma" width="100">
+        </div>
+    </figure>
 
         <div class="info-content">
           <h1 class="name" title="Sachin Sharma ">Sachin Sharma</h1>
@@ -204,8 +211,8 @@
         <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
-        <section class="botbox">
-            <iframe
+        <section class="botbox" style="margin-top: 10px;">
+            <iframe id ="ibot" 
                 src="https://www.chatbase.co/chatbot-iframe/wFfpOiONfEVGa46eVicxy"
                 frameborder="0"
            ></iframe>
@@ -588,7 +595,7 @@
           <h2 class="h2 article-title">Info</h2>
         </header>
   <section class="botbox">
-          <iframe
+          <iframe id ="ibot"
               src="https://www.chatbase.co/chatbot-iframe/wFfpOiONfEVGa46eVicxy"
               frameborder="0"
          ></iframe>
@@ -691,7 +698,7 @@
           <h2 class="h2 article-title">Projects</h2>
         </header>
         <section class="botbox">
-          <iframe
+          <iframe id ="ibot"
               src="https://www.chatbase.co/chatbot-iframe/wFfpOiONfEVGa46eVicxy"
               frameborder="0"
          ></iframe>
@@ -1313,7 +1320,7 @@
           <h2 class="h2 article-title">Blog</h2>
         </header>
         <section class="botbox">
-          <iframe
+          <iframe id ="ibot"
               src="https://www.chatbase.co/chatbot-iframe/wFfpOiONfEVGa46eVicxy"
               frameborder="0"
          ></iframe>
@@ -1511,7 +1518,7 @@
           <h2 class="h2 article-title">Contact</h2>
         </header>
         <section class="botbox">
-          <iframe
+          <iframe id ="ibot"
               src="https://www.chatbase.co/chatbot-iframe/wFfpOiONfEVGa46eVicxy"
               frameborder="0"
          ></iframe>
